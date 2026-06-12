@@ -11,6 +11,9 @@ const {
 
 const authMiddleware = require("../middleware/authMiddleware");
 
+const adminMiddleware =
+require("../middleware/adminMiddleware");
+
 router.post("/register", registerUser);
 
 router.post("/login", loginUser);
@@ -19,6 +22,19 @@ router.get(
     "/profile",
     authMiddleware,
     getProfile
+);
+
+router.get(
+    "/admin",
+    authMiddleware,
+    adminMiddleware,
+    (req, res) => {
+
+        res.json({
+            message: "Welcome Admin"
+        });
+
+    }
 );
 
 
