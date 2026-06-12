@@ -1,8 +1,15 @@
-const express = require ("express")
-const app = express()
+const express = require("express");
 
-app.get("/",(req,res)=> {
-    res.send("Welcome to the e commerce API")
+const app = express();
+
+app.use(express.json());
+
+const userRoutes = require("./routes/userRoutes");
+
+app.use("/api/users", userRoutes);
+
+app.get("/", (req, res) => {
+    res.send("Welcome to Ecommerce API");
 });
 
-module.exports= app;
+module.exports = app;
