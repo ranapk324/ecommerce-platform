@@ -1,11 +1,7 @@
 const express = require("express");
-
 const router = express.Router();
-
-const { createProduct , getProduct} = require("../controllers/productController");
-
+const { createProduct , getProduct, getProductById} = require("../controllers/productController");
 const authMiddleware = require("../middleware/authmiddleware");
-
 const adminMiddleware = require("../middleware/adminMiddleware");
 
 router.post(
@@ -16,5 +12,6 @@ router.post(
 );
 
 router.get("/",getProduct);
+router.get("/:id",getProductById)
 
 module.exports = router;
