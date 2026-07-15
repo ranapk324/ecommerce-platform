@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const { createOrder , getMyOrders , getOrderById ,getAllOrders} = require("../controllers/orderController");
+const { createOrder , getMyOrders , getOrderById ,getAllOrders , updateOrderStatus} = require("../controllers/orderController");
 
 const authMiddleware = require("../middleware/authmiddleware");
 const adminMiddleware = require("../middleware/adminMiddleware");
@@ -31,6 +31,13 @@ router.post(
     "/",
     authMiddleware,
     createOrder
+);
+
+router.put(
+    "/:id",
+    authMiddleware,
+    adminMiddleware,
+    updateOrderStatus
 );
 
 module.exports = router;
