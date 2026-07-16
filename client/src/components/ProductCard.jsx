@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function ProductCard({ product }) {
     return (
         <Link
-            to={`/products/${product.id}`}
+            to={`/products/${product._id}`}
             style={{
                 textDecoration: "none",
                 color: "inherit",

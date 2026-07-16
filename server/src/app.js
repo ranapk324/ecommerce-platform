@@ -4,6 +4,9 @@ const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 const orderRoutes = require("./routes/orderRoutes")
+const cors = require("cors");
+
+app.use(cors());
 
 app.use(express.json());
 
