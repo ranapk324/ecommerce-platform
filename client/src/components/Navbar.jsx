@@ -1,17 +1,29 @@
-function Footer() {
+import { Link } from "react-router-dom";
+
+function Navbar() {
     return (
-        <footer
+        <nav
             style={{
-                marginTop: "50px",
+                display: "flex",
+                justifyContent: "space-between",
                 padding: "20px",
-                textAlign: "center",
                 background: "#222",
-                color: "white",
             }}
         >
-            © 2026 Ecommerce Platform
-        </footer>
+            <h2 style={{ color: "white" }}>E-Commerce</h2>
+
+            <div
+                style={{
+                    display: "flex",
+                    gap: "20px",
+                }}
+            >
+                <Link to="/">Home</Link>
+
+                <Link to="/products">Products</Link>
+            </div>
+        </nav>
     );
 }
 
-export default Footer;
+export default Navbar;
